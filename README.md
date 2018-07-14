@@ -1,6 +1,5 @@
 # Fleet Fox 
 ## A collaborative map of planet Earth on the Ethereum blockchain
-[A culinary interpretation of Portland, Oregon](https://bkpf.pythonanywhere.com/fleetfox)
 
 ## What is Fleet Fox?
 Fleet Fox is a public ledger of annotated GPS data hosted on the Ethereum blockchain.
@@ -109,12 +108,24 @@ tokenSymbol: fc
 There are 10,000,000 Fleet Coin in circulation, which can be exchanged for Ether at a rate of 1,000 Fleet Coin per 1 Ether.
 
 
+### Visualizing GPS data 
+Running ```python3 display_map``` will prompt you to enter a path and filename of the location of a .ffx file containing information structured as:
+
+```
+*title*
+longitude,latitude;description
+```
+
+The script will also prompt you to enter a name and path to save the map, e.g. /home/omar/Desktop/portland.html
+
+Here's an example:
+[A culinary interpretation of Portland, Oregon](https://bkpf.pythonanywhere.com/fleetfox)
 
 
 ## Deploying on a private network
 The following steps are for users with a solid grasp of Ethereum development and networking, or who are motivated to put in the effort to learn. The average user need not deploy the Fleet Coin contract on a private network and can interact with the Fleet Fox contract on the main network. 
 
-[Simbel](https://github.com/osmode/simbel), the Ethereum for knowledge creation and sharing, simplifies contract deployment. To run Fleet Fox on a private network, first run ```deploy.sh``` to compile the Fleet Coin contract and generate the deployment script.
+[Simbel](https://github.com/osmode/simbel), the Ethereum operating system for knowledge creation and sharing, simplifies contract deployment. To run Fleet Fox on a private network, first run ```deploy.sh``` to compile the Fleet Coin contract and generate the deployment script.
 ```
 cd /home/omar/Desktop/simbel
 ./deploy.sh

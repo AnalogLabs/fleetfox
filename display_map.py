@@ -25,8 +25,11 @@ marker_desc['*'] = "Star"
 marker_desc['P'] = "Plus (+)"
 marker_desc['X'] = "X"
 
+while True:
+	gps_file_path = input('Enter path of .ffx file containing annotated GPS coordinates: ')
+	if gps_file_path: break
 
-with open('/home/omar/Desktop/portland.ffx') as f:
+with open(gps_file_path) as f:
         lines = f.readlines()
         for index,l in enumerate(lines):
                 print(l)
@@ -62,12 +65,16 @@ with open('/home/omar/Desktop/portland.ffx') as f:
                         markers.append(color+shape)
                         plt.plot(longitude,latitude,color+shape,ms='20')
 
-map_path = '/home/omar/Desktop/portland.html'
-legend_html = "<font face='Courier'><b>"+title+"</b><br><br>Powered by <a href='http://github.com/osmode/fleetfox'>FLEET FOX</a><br>A collaborative map of the world<br>on the Ethereum blockchain.<br><a href='http://analog.earth'>ANALOG LABS</a></font><br><br>"
+while True:
+
+	map_path = input('Enter filename and path to save map: ')
+	if map_path: break
+
+legend_html = "<font face='Courier'><b>"+title+"</b><br><br>Powered by <a href='http://github.com/AnalogLabs/fleetfox'>FLEET FOX</a><br>A collaborative map of the world<br>on the Ethereum blockchain.<br><a href='http://analog.earth'>ANALOG LABS</a><br><br>"
 legend_html += "<b>LEGEND</b><br><table>"
 for index,lon in enumerate(longs):
         legend_html += "<tr><td>"+marker_desc[markers[index][0]]+" "+marker_desc[markers[index][1]]+" - "+descriptions[index]+"</td></tr>"
-legend_html += "</table>"
+legend_html += "</table></font>"
 
 
 #plt.show()
