@@ -20,7 +20,7 @@ First make sure you have the Go-Ethereum client (aka *geth*) installed on your m
 *1. Blockchain synchronization*
 
 Start the Ethereum client and sync with the Ethereum blockchain.
-
+```
 geth --syncmode light console
 ```
 
@@ -107,6 +107,8 @@ tokenSymbol: fc
 ```
 
 There are 10,000,000 Fleet Coin in circulation, which can be exchanged for Ether at a rate of 1,000 Fleet Coin per 1 Ether.
+
+
 
 
 ## Deploying on a private network
