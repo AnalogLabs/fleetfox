@@ -147,7 +147,7 @@ In the interest of fostering an open and welcoming environment, we as contributo
 This project builds on work by the [Ethereum](https://www.ethereum.org), [web3.py](https://github.com/pipermerriam/web3.py), [IPFS](https://github.com/ipfs/ipfs) and [py-ipfs](https://github.com/ipfs/py-ipfs-api) communities. 
 
 ## License
-[Analog Labs License](https://github.com/simbel/simbel/blob/master/LICENSE) 
+[Analog Labs License](https://github.com/AnalogLabs/fleetfox/blob/master/LICENSE)
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is
