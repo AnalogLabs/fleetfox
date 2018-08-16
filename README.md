@@ -39,14 +39,14 @@ Components:
 * Display 
 * GPS module
 
-The receiver prototype is also available ready to use out-of-the-box as a [kit available for purchase through Analog Labs](https://fleetfox.nyc3.digitaloceanspaces.com/diy_instructions/fox.png). Each kit includes an illustrated instruction manual on how to assemble a Fleet Fox receiver and use it to pin messages, Fleet Coin, and Ether to any 3D coordinate in the physical world.
+The receiver prototype is also available ready to use out-of-the-box as a [kit available for purchase through Analog Labs](https://www.analog.earth/fleet-fox/fleet-fox-receiver). Each kit includes an illustrated instruction manual on how to assemble a Fleet Fox receiver and use it to pin messages, Fleet Coin, and Ether to any 3D coordinate in the physical world.
 
 If you just want to try it out, the minimum hardware setup is a Unix-based computer (Linux or Mac computer) and a USB GPS module which outputs NMEA-formatted GPS data via serial.
 
 ## Quickstart 
 
 ### The Easy Way
-Purchasing the [Fleet Fox receiver kit](https://fleetfox.nyc3.digitaloceanspaces.com/diy_instructions/fox.png) is the easiest and fastest way to start using Fleet Fox.
+Purchasing the [Fleet Fox receiver kit](https://www.analog.earth/fleet-fox/fleet-fox-receiver) is the easiest and fastest way to start using Fleet Fox.
 
 ### The Hard Way
 If you are tech savvy or are committed to investing the time necessary to acquire the skills you'll need to pilot this early technology, these instructions will bring you up to speed. These steps only apply if you are building your own receiver or running Fleet Fox on a laptop. The Fleet Fox receiver kit comes ready-to-use on powering it on.
