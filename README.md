@@ -1,5 +1,6 @@
 # Fleet Fox 
 ## Blockchain Messaging Service
+![Fleet Fox Logo](https://fleetfox.nyc3.digitaloceanspaces.com/diy_instructions/fox.png)
 
 ## What is Fleet Fox?
 Fleet Fox is a system that lets users pin messages and value to any 3-dimensional coordinate on Earth.
