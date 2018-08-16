@@ -250,16 +250,16 @@ The directory structure is important because Simbel and the Simbel Networking Ut
 The ```safari``` directory is the default location for .ffx files, and the ```messages``` directory is the default location where messages are downloaded from the blockchain.
 
 ## Contribute
-Please take a look at the [contribution documentation](https://github.com/simbel/simbel/blob/master/docs/CONTRIBUTING.md) for information on how to report bugs, suggest enhancements, and contribute code. If you or your organization use Fleet Fox to do something great, please share your experience! 
+Please take a look at the [contribution documentation](https://github.com/AnalogLabs/fleetfox/blob/master/docs/CONTRIBUTING.md) for information on how to report bugs, suggest enhancements, and contribute code. If you or your organization use Fleet Fox to do something great, please share your experience! 
 
 ## Code of conduct
-In the interest of fostering an open and welcoming environment, we as contributors and maintainers pledge to making participation in our project and our community a harassment-free experience for everyone, regardless of age, body size, disability, ethnicity, gender identity and expression, level of experience, nationality, personal appearance, race, religion, or sexual identity and orientation. Read the full [Contributor Covenant](https://github.com/osmode/fleetfox/blob/master/docs/CODE_OF_CONDUCT.md). 
+In the interest of fostering an open and welcoming environment, we as contributors and maintainers pledge to making participation in our project and our community a harassment-free experience for everyone, regardless of age, body size, disability, ethnicity, gender identity and expression, level of experience, nationality, personal appearance, race, religion, or sexual identity and orientation. Read the full [Contributor Covenant](https://github.com/AnalogLabs/fleetfox/blob/master/docs/CODE_OF_CONDUCT.md).
 
 ## Acknowledgements
 This project builds on work by the [Ethereum](https://www.ethereum.org), [web3.py](https://github.com/pipermerriam/web3.py), [IPFS](https://github.com/ipfs/ipfs) and [py-ipfs](https://github.com/ipfs/py-ipfs-api) communities. 
 
 ## License
-[Analog Labs License](https://github.com/AnalogLabs/fleetfox/blob/master/LICENSE)
+[Analog Labs License](https://github.com/AnalogLabs/fleetfox/blob/master/docs/LICENSE)
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
