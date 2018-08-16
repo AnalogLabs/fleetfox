@@ -14,8 +14,6 @@ The Fleet Fox application runs on the Ethereum blockchain, and the hardware is b
 ## Why Fleet Fox?
 Fleet Fox allows users to design geolocation-based incentive programs and securely send and receive information and value.
 
-Like writing a letter or checking a physical post box, the Blockchain Messaging Service does not display ads, track users, or otherwise divert users' attention with unrelated tasks.
-
 The Ethereum blockchain backend also lends Fleet Fox these built-in features:
 
 * Secure Blockchain Messaging Service
