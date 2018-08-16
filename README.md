@@ -188,13 +188,13 @@ The following steps are for users with a solid grasp of Ethereum development and
 
 To run Fleet Fox on a private network, first run ```deploy.sh``` to compile the Fleet Coin contract and generate the deployment script.
 ```
-cd /home/omar/Desktop/fleetfox
+cd ~/Desktop/fleetfox
 ./deploy.sh
 
 Example contructor arguments: 10000000, "fleetcoin", "fc"
 
 ```
-* Note: * You may need to increase the gas value specified in ```/home/omar/Desktop/fleetfox/simbel/source/fleetcoin.js``` to get the contract mined, depending on how your private network is configured.
+* Note: * You may need to increase the gas value specified in ```~/Desktop/fleetfox/simbel/source/fleetcoin.js``` to get the contract mined, depending on how your private network is configured.
 
 Then start the private blockchain.
 ```
@@ -205,7 +205,7 @@ Unlock your Ethereum account and deploy the contract.
 tmux a -t geth
 
 personal.unlockAccount(eth.accounts[0])
-loadScript('/home/omar/Desktop/fleetfox/simbel/source/fleetcoin.js')
+loadScript('~/Desktop/fleetfox/simbel/source/fleetcoin.js')
 ```
 
 Make note of the address to which the contract is mined, and update bcinterface.py as necessary.
