@@ -31,7 +31,6 @@ The Ethereum blockchain backend also lends Fleet Fox these built-in features:
 
 ## Fleet Fox Receiver
 The Fleet Fox receiver can be assembled with open-source hardware.
-![DIY instructions](https://nyc3.digitaloceanspaces.com/fleetfox/diy_instructions/animated.gif)
 
 Components:
 
