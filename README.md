@@ -204,16 +204,18 @@ bci.contract.transact(bci.tx).buy()
 bci.contract.transact(bci.tx).sell(1000)  # sell 500 fleetcoin at current exchange rate (1 Ether = 1000 Fleet Coin)
 ```
 
-### Fleet Coin contract address:  0xe18FE4Ded62a8aa723D6BE485B355d39d409354d
-### [Fleet Coin contract ABI](https://github.com/AnalogLabs/fleetfox/blob/master/simbel/source/fleetcoin.abi): 
+## Fleet Coin Smart Contract
 
+### Fleet Coin contract address:  0xe18FE4Ded62a8aa723D6BE485B355d39d409354d
+### [Fleet Coin contract ABI](https://github.com/AnalogLabs/fleetfox/blob/master/simbel/source/fleetcoin.abi)
+
+There are 10,000,000 Fleet Coin in circulation, which can be exchanged for Ether at a rate of 1,000 Fleet Coin per 1 Ether.
 ```
 totalSupply: 10,000,000
 tokenName: fleetcoin
 tokenSymbol: fc
 ```
 
-There are 10,000,000 Fleet Coin in circulation, which can be exchanged for Ether at a rate of 1,000 Fleet Coin per 1 Ether.
 
 
 ### Running the Fleet Fox client
