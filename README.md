@@ -1,6 +1,5 @@
 # Fleet Fox 
 ## Blockchain Messaging Service
-![Fleet Fox Logo](https://fleetfox.nyc3.digitaloceanspaces.com/diy_instructions/fox.png)
 
 ## What is Fleet Fox?
 Fleet Fox is a system that lets users pin messages and value to any 3-dimensional coordinate on Earth.
@@ -13,6 +12,8 @@ The Fleet Fox application runs on the Ethereum blockchain, and the hardware is b
 
 ## Why Fleet Fox?
 Fleet Fox allows users to design geolocation-based incentive programs and securely send and receive information and value.
+
+Like writing a letter or checking a physical post box, the Blockchain Messaging Service does not display ads, track users, or otherwise divert users' attention with unrelated tasks.
 
 The Ethereum blockchain backend also lends Fleet Fox these built-in features:
 
@@ -32,9 +33,6 @@ The Ethereum blockchain backend also lends Fleet Fox these built-in features:
 ## Fleet Fox Receiver
 The Fleet Fox receiver can be assembled with open-source hardware.
 
-![Fleet Fox DIY kit](https://fleetfox.nyc3.digitaloceanspaces.com/diy_instructions/1.JPG)
-
-
 Components:
 
 * Raspberry Pi or similar Linux-based microcontroller
@@ -42,14 +40,14 @@ Components:
 * Display 
 * GPS module
 
-The receiver prototype is also available ready to use out-of-the-box as a [kit available for purchase through Analog Labs](https://www.analog.earth/fleet-fox/fleet-fox-receiver). Each kit includes an illustrated instruction manual on how to assemble a Fleet Fox receiver and use it to pin messages, Fleet Coin, and Ether to any 3D coordinate in the physical world.
+The receiver prototype is also available ready to use out-of-the-box as a [kit available for purchase through Analog Labs](https://analog.earth). Each kit includes an illustrated instruction manual on how to assemble a Fleet Fox receiver and use it to send and receive messages and tokens. 
 
 If you just want to try it out, the minimum hardware setup is a Unix-based computer (Linux or Mac computer) and a USB GPS module which outputs NMEA-formatted GPS data via serial.
 
 ## Quickstart 
 
 ### The Easy Way
-Purchasing the [Fleet Fox receiver kit](https://www.analog.earth/fleet-fox/fleet-fox-receiver) is the easiest and fastest way to start using Fleet Fox.
+Purchasing the [Fleet Fox receiver kit](http://analog.earth) is the easiest and fastest way to start using Fleet Fox.
 
 ### The Hard Way
 If you are tech savvy or are committed to investing the time necessary to acquire the skills you'll need to pilot this early technology, these instructions will bring you up to speed. These steps only apply if you are building your own receiver or running Fleet Fox on a laptop. The Fleet Fox receiver kit comes ready-to-use on powering it on.
@@ -116,9 +114,35 @@ Returns:
 Example:
     from bcmutil import *
     util = BCMUtil()
-    location_hash = util.gen_location_hash(longitude,latitude,altitude,accuracy,secret)  # accuracy is the number of decimal places of accuracy for longitude and latitude; longitude, latitude, and altitude are strings
+    location_hash, location_string = util.gen_location_hash(longitude,latitude,altitude,accuracy,secret)  # accuracy is the number of decimal places of accuracy for longitude and latitude; longitude, latitude, and altitude are strings
     bci.contract.transact(bci.tx).new_checkpoint(location_hash, "description of top secret location", 0, 0, 1, 0)
 
+```
+
+### Update existing checkpoint
+```
+bci.contract.transact(bci.tx).update_checkpoint()
+
+Arguments:
+    uint index,  # index of address in array (eg, 0, 1, 2, ...)
+    bytes32 location_hash,  # output of keccak256(location_string, secret)
+    string description,
+    uint ping_ether_cost,  # amount of Ether it costs to ping this checkpoint
+    uint ping_token_cost,  # amont of token it costs to ping this checkpoint
+    uint ping_token_reward, # token reward for pinging this checkpoint
+    uint ping_ether_reward, # Ether reward for pinging this checkpoint
+
+Returns:
+    bool success
+
+Example:
+    from bcmutil import *
+    from bcinterface import *
+    util = BCMUtil()
+    bci = BCInterface(mainnet=True)  # if using on MacOS, set argument mac=True
+
+    location_hash, coord_string = util.gen_location_hash('135.765','35.005','0',3,'secret_code')
+    bci.contract.transact(bci.tx).update_checkpoint(2,location_hash,coord_string,0,0,1,0,1)
 ```
 
 ### Ping contract with a location
@@ -136,6 +160,18 @@ Returns:
 ```
 
 ### Get checkpoint information
+
+Query number of checkpoints created by address *checkpoints_owner*.
+```
+bci.contract.call().get_num_checkpoints()
+Arguments:
+    address checkpoints_owner
+
+Returns:
+    uint num_checkpoints
+```
+
+Query checkpoints information
 ```
 bci.contract.call().get_checkpoint_status()
 
@@ -167,7 +203,9 @@ bci.tx['value'] = 10**18  # exchange one Ether (10**18 wei = 1 Ether) for Fleet 
 bci.contract.transact(bci.tx).buy()
 bci.contract.transact(bci.tx).sell(1000)  # sell 500 fleetcoin at current exchange rate (1 Ether = 1000 Fleet Coin)
 ```
-The Fleet Coin ABI and contract are located in the source directory and can be directly inspected at address 0xe18FE4Ded62a8aa723D6BE485B355d39d409354d on the Ethereum main network.
+
+### Fleet Coin contract address:  0xe18FE4Ded62a8aa723D6BE485B355d39d409354d
+### [Fleet Coin contract ABI](https://github.com/AnalogLabs/fleetfox/blob/master/simbel/source/fleetcoin.abi): 
 
 ```
 totalSupply: 10,000,000
@@ -191,13 +229,13 @@ The following steps are for users with a solid grasp of Ethereum development and
 
 To run Fleet Fox on a private network, first run ```deploy.sh``` to compile the Fleet Coin contract and generate the deployment script.
 ```
-cd ~/Desktop/fleetfox
+cd /home/omar/Desktop/fleetfox
 ./deploy.sh
 
 Example contructor arguments: 10000000, "fleetcoin", "fc"
 
 ```
-* Note: * You may need to increase the gas value specified in ```~/Desktop/fleetfox/simbel/source/fleetcoin.js``` to get the contract mined, depending on how your private network is configured.
+* Note: * You may need to increase the gas value specified in ```/home/omar/Desktop/fleetfox/simbel/source/fleetcoin.js``` to get the contract mined, depending on how your private network is configured.
 
 Then start the private blockchain.
 ```
@@ -208,7 +246,7 @@ Unlock your Ethereum account and deploy the contract.
 tmux a -t geth
 
 personal.unlockAccount(eth.accounts[0])
-loadScript('~/Desktop/fleetfox/simbel/source/fleetcoin.js')
+loadScript('/home/omar/Desktop/fleetfox/simbel/source/fleetcoin.js')
 ```
 
 Make note of the address to which the contract is mined, and update bcinterface.py as necessary.
@@ -253,16 +291,16 @@ The directory structure is important because Simbel and the Simbel Networking Ut
 The ```safari``` directory is the default location for .ffx files, and the ```messages``` directory is the default location where messages are downloaded from the blockchain.
 
 ## Contribute
-Please take a look at the [contribution documentation](https://github.com/AnalogLabs/fleetfox/blob/master/docs/CONTRIBUTING.md) for information on how to report bugs, suggest enhancements, and contribute code. If you or your organization use Fleet Fox to do something great, please share your experience! 
+Please take a look at the [contribution documentation](https://github.com/simbel/simbel/blob/master/docs/CONTRIBUTING.md) for information on how to report bugs, suggest enhancements, and contribute code. If you or your organization use Fleet Fox to do something great, please share your experience! 
 
 ## Code of conduct
-In the interest of fostering an open and welcoming environment, we as contributors and maintainers pledge to making participation in our project and our community a harassment-free experience for everyone, regardless of age, body size, disability, ethnicity, gender identity and expression, level of experience, nationality, personal appearance, race, religion, or sexual identity and orientation. Read the full [Contributor Covenant](https://github.com/AnalogLabs/fleetfox/blob/master/docs/CODE_OF_CONDUCT.md).
+In the interest of fostering an open and welcoming environment, we as contributors and maintainers pledge to making participation in our project and our community a harassment-free experience for everyone, regardless of age, body size, disability, ethnicity, gender identity and expression, level of experience, nationality, personal appearance, race, religion, or sexual identity and orientation. Read the full [Contributor Covenant](https://github.com/osmode/fleetfox/blob/master/docs/CODE_OF_CONDUCT.md). 
 
 ## Acknowledgements
 This project builds on work by the [Ethereum](https://www.ethereum.org), [web3.py](https://github.com/pipermerriam/web3.py), [IPFS](https://github.com/ipfs/ipfs) and [py-ipfs](https://github.com/ipfs/py-ipfs-api) communities. 
 
 ## License
-[Analog Labs License](https://github.com/AnalogLabs/fleetfox/blob/master/docs/LICENSE)
+[Analog Labs License](https://github.com/simbel/simbel/blob/master/LICENSE) 
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -285,4 +323,5 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
+
 
