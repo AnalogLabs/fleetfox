@@ -1,4 +1,4 @@
-tmux new-session -d -s sakis3g "/home/pi/umtskeeper_script"
+tmux new-session -d -s sakis3g "/home/pi/Desktop/fleetfox/umtskeeper_script"
 
 cd /home/pi/Desktop/fleetfox
 python3 ping_api_webserver.py
