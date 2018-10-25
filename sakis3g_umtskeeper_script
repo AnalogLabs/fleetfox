@@ -1,1 +1,0 @@
- sudo ./umtskeeper --sakisoperators "USBINTERFACE='3OTHER='USBMODEM' USBMODEM='05c6:9000' APN='wap.cingular' SIM_PIN='' APN_USER='wap@cingulargprs.com' APN_PASS='cingular1'" --sakisswitches "--sudo --console" --devicename 'SimTech SIMCOM5320' --log --monthstart 8 --nat 'no'
