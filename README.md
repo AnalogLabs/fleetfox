@@ -1,8 +1,8 @@
 # Fleet Fox 
-## Blockchain Messaging Service
+## Mobile internet-connected GPS tracker
 
 ## What is Fleet Fox?
-Fleet Fox is a system that lets users pin messages and value to any 3-dimensional coordinate on Earth.
+Fleet Fox is a a mobile internet-connected GPS tracker that lets users pin messages and value to any 3-dimensional coordinate on Earth.
 
 A "Checkpoint" corresponds to a physical location in the form of "longitude,latitude,altitude".
 
@@ -12,8 +12,6 @@ The Fleet Fox application runs on the Ethereum blockchain, and the hardware is b
 
 ## Why Fleet Fox?
 Fleet Fox allows users to design geolocation-based incentive programs and securely send and receive information and value.
-
-Like writing a letter or checking a physical post box, the Blockchain Messaging Service does not display ads, track users, or otherwise divert users' attention with unrelated tasks.
 
 The Ethereum blockchain backend also lends Fleet Fox these built-in features:
 
@@ -30,19 +28,26 @@ The Ethereum blockchain backend also lends Fleet Fox these built-in features:
 * Collaborative map-making and location sharing
 
 
-## Fleet Fox Receiver
-The Fleet Fox receiver can be assembled with open-source hardware.
+## Fleet Fox DIY kit
+The components necessary to asseble the Fleet Fox GPS tracker can be sourced from a number of manufacturers and suppliers.
 
 Components:
 
 * Raspberry Pi or similar Linux-based microcontroller
+* RPI GSM/GPRS 3G HAT
+* 3G-compatible SIM card
 * Battery pack
-* Display 
-* GPS module
+* Micro-USB cables (2) 
+* GPS antenna
 
-The receiver prototype is also available ready to use out-of-the-box as a [kit available for purchase through Analog Labs](https://analog.earth). Each kit includes an illustrated instruction manual on how to assemble a Fleet Fox receiver and use it to send and receive messages and tokens. 
+Installation and debugging will also require these components, which are not included in the DIY kit:
 
-If you just want to try it out, the minimum hardware setup is a Unix-based computer (Linux or Mac computer) and a USB GPS module which outputs NMEA-formatted GPS data via serial.
+* HDMI-compatible monitor
+* HDMI cable
+* Wireless keyboard and mouse
+
+
+The receiver prototype is also available ready to use out-of-the-box as a [kit available for purchase through Analog Labs](https://analog.earth/fleet-fox). Each kit includes an illustrated walk-through manual on how to assemble a Fleet Fox GPS tracker and visualize coordinates on an interactive online map.
 
 ## Quickstart 
 
